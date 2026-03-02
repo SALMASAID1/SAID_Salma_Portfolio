@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Said Salma | Étudiant en Ingénierie des Données</title>
+    <meta name="description" content="Portfolio de Said Salma - Étudiant en Ingénierie des Données spécialisé en Machine Learning, Big Data et Analyse Prédictive.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- ==================== LOADER ==================== -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Chargement<span class="dots">...</span></p>
+        </div>
+    </div>
+
+    <!-- ==================== CURSOR ==================== -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- ==================== STARS CANVAS ==================== -->
+    <canvas id="stars-canvas"></canvas>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>SS<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link" data-text="À propos">À propos</a></li>
+                <li><a href="#experience" class="nav-link" data-text="Expérience">Expérience</a></li>
+                <li><a href="#projects" class="nav-link" data-text="Projets">Projets</a></li>
+                <li><a href="#skills" class="nav-link" data-text="Compétences">Compétences</a></li>
+                <li><a href="#education" class="nav-link" data-text="Formation">Formation</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="index.html" class="lang-switch" title="English version">
+                    <i class="fas fa-globe"></i> EN
+                </a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Changer le thème">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="#contact" class="nav-cta">Me Contacter</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-effects">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge" data-aos="fade-down">
+                    <span class="badge-dot"></span>
+                    Disponible pour stages & opportunités
+                </div>
+                <h1 class="hero-title" data-aos="fade-up">
+                    <span class="title-line">Bonjour, je suis</span>
+                    <span class="title-name">Said <span class="text-gradient">SALMA</span></span>
+                </h1>
+                <div class="hero-typewriter" data-aos="fade-up" data-aos-delay="200">
+                    <span class="typewriter-prefix">Je suis </span>
+                    <span class="typewriter-text" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                    Étudiant en Ingénierie des Données passionné par la construction de solutions data-driven 
+                    à travers le machine learning, l'analyse prédictive et les pratiques modernes d'ingénierie des données.
+                </p>
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Voir mes projets</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>Me Contacter</span>
+                    </a>
+                    <a href="asset/SAID_Salma_cv_fr.pdf" download class="btn btn-download">
+                        <i class="fas fa-download"></i>
+                        <span>Télécharger CV</span>
+                    </a>
+                </div>
+                <div class="hero-socials" data-aos="fade-up" data-aos-delay="500">
+                    <a href="https://github.com/" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:salma2003said@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+212622918403" class="social-link" aria-label="Téléphone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="300">
+                <div class="hero-card">
+                    <div class="card-header">
+                        <div class="card-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="card-title">portfolio.py</span>
+                    </div>
+                    <div class="card-body">
+                        <pre><code><span class="code-keyword">class</span> <span class="code-class">IngenieurDonnees</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(<span class="code-param">self</span>):
+        <span class="code-param">self</span>.nom = <span class="code-string">"Said SALMA"</span>
+        <span class="code-param">self</span>.role = <span class="code-string">"Étudiant Ingénierie Données"</span>
+        <span class="code-param">self</span>.ecole = <span class="code-string">"ENSA El Hoceima"</span>
+        <span class="code-param">self</span>.competences = [
+            <span class="code-string">"Python"</span>, <span class="code-string">"Spark"</span>,
+            <span class="code-string">"Kafka"</span>, <span class="code-string">"ML"</span>,
+            <span class="code-string">"Deep Learning"</span>
+        ]
+
+    <span class="code-keyword">def</span> <span class="code-func">passion</span>(<span class="code-param">self</span>):
+        <span class="code-keyword">return</span> <span class="code-string">"Construire des pipelines<br>         qui génèrent des insights"</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Défiler vers le bas</span>
+        </div>
+    </section>
+
+    <!-- ==================== À PROPOS ==================== -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;à propos&gt;</span>
+                <h2 class="section-title">À propos de <span class="text-gradient">Moi</span></h2>
+                <p class="section-subtitle">Découvrez qui je suis et ce qui me motive</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-content" data-aos="fade-right">
+                    <h3>Un étudiant passionné par l'Ingénierie des Données</h3>
+                    <p>
+                        Actuellement en deuxième année du cycle Ingénierie des Données à l'ENSA El Hoceima, 
+                        je suis animé par une profonde passion pour la science des données, le machine learning 
+                        et le développement logiciel. Ma formation d'ingénieur m'a doté d'une solide expertise 
+                        technique couvrant l'ensemble de la chaîne de valeur des données — de l'ingestion 
+                        à la visualisation en temps réel.
+                    </p>
+                    <p>
+                        Je me spécialise dans la conception de solutions data-driven évolutives à travers la modélisation 
+                        prédictive, la création de tableaux de bord interactifs et l'intégration de pratiques DevOps 
+                        pour garantir la fiabilité du déploiement. Je maîtrise des outils comme Python (Scikit-learn, 
+                        TensorFlow, PyTorch, Pandas, NumPy) et les technologies Big Data telles qu'Apache Spark, 
+                        Kafka et Hadoop.
+                    </p>
+                    <p>
+                        Je suis membre actif du Data & AI Club et de la communauté Moroccan Data Scientists, 
+                        engagé dans le développement professionnel continu à travers des certifications et des 
+                        projets d'ingénierie concrets.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                            <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                            <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Projets</span>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Stages</span>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                            <span class="stat-number" data-count="4">0</span>
+                            <span class="stat-label">Langues</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-details" data-aos="fade-left">
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-user"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Nom</span>
+                            <span class="detail-value">Said SALMA</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Localisation</span>
+                            <span class="detail-value">El Jadida, Maroc</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Email</span>
+                            <span class="detail-value">salma2003said@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-phone"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Téléphone</span>
+                            <span class="detail-value">+212 622918403</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Formation</span>
+                            <span class="detail-value">ENSA El Hoceima</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-language"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Langues</span>
+                            <span class="detail-value">Arabe, Anglais, Français, Espagnol</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXPÉRIENCE ==================== -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;expérience&gt;</span>
+                <h2 class="section-title">Expérience <span class="text-gradient">Professionnelle</span></h2>
+                <p class="section-subtitle">Mon parcours professionnel et mes contributions</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Stagiaire Data Scientist</h3>
+                                <span class="timeline-company">
+                                    <i class="fas fa-building"></i> OCP Group — Analyse Prédictive RH
+                                </span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar-alt"></i> Juillet 2025
+                            </span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li><i class="fas fa-chevron-right"></i>Développement d'un système de prédiction d'attrition des employés utilisant des modèles de machine learning (Random Forest, Régression Logistique, K-Means).</li>
+                            <li><i class="fas fa-chevron-right"></i>Prétraitement des données incluant le nettoyage, l'encodage et la normalisation des caractéristiques RH.</li>
+                            <li><i class="fas fa-chevron-right"></i>Création de visualisations et d'analyses exploratoires pour identifier les facteurs clés d'attrition.</li>
+                            <li><i class="fas fa-chevron-right"></i>Conception d'un tableau de bord interactif avec Streamlit pour la prédiction en temps réel et l'aide à la décision RH.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Streamlit</span><span class="tag">Pandas</span><span class="tag">ML</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Stagiaire Data Scientist (À distance)</h3>
+                                <span class="timeline-company"><i class="fas fa-building"></i> CodSoft</span>
+                            </div>
+                            <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Oct 2024</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li><i class="fas fa-chevron-right"></i>Travail sur des projets de modélisation prédictive appliquant des techniques de machine learning.</li>
+                            <li><i class="fas fa-chevron-right"></i>Consolidation des compétences en science des données à travers des projets pratiques.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Data Science</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Stage d'initiation</h3>
+                                <span class="timeline-company"><i class="fas fa-building"></i> Intermir</span>
+                            </div>
+                            <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Août 2022</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li><i class="fas fa-chevron-right"></i>Création d'un site web dynamique dans le cadre du programme de stage d'initiation.</li>
+                        </ul>
+                        <div class="timeline-tags"><span class="tag">Développement Web</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJETS ==================== -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;projets&gt;</span>
+                <h2 class="section-title">Projets <span class="text-gradient">Réalisés</span></h2>
+                <p class="section-subtitle">Une sélection de projets que j'ai réalisés et auxquels j'ai contribué</p>
+            </div>
+            <div class="projects-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="ai">IA & NLP</button>
+                <button class="filter-btn" data-filter="data">Data & ML</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="ai" data-aos="fade-up">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-robot"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">IA & NLP</div><h3 class="project-title">Chatbot RAG IT-Pulse</h3><p class="project-description">Un projet en binôme exploitant les LLMs pour le streaming et la recherche de connaissances en temps réel via la génération augmentée par récupération.</p><div class="project-tech"><span>LLMs</span><span>RAG</span><span>ChromaDB</span><span>Python</span></div></div>
+                </div>
+                <div class="project-card" data-category="ai" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-brain"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">IA & NLP</div><h3 class="project-title">Agent IA Apprentissage Langues</h3><p class="project-description">Un agent IA sur n8n pour la recommandation d'apprentissage linguistique : workflow automatisé pour suggérer des ressources personnalisées.</p><div class="project-tech"><span>n8n</span><span>Agents IA</span><span>LLMs</span><span>Automatisation</span></div></div>
+                </div>
+                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-chart-line"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Data & ML</div><h3 class="project-title">Prédiction d'Attrition des Employés</h3><p class="project-description">Projet ML pour prédire les schémas d'attrition des employés en utilisant des modèles de classification et la visualisation de données.</p><div class="project-tech"><span>Python</span><span>Scikit-learn</span><span>ML</span></div></div>
+                </div>
+                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-exchange-alt"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Data & ML</div><h3 class="project-title">Pipeline ETL — Yallakora</h3><p class="project-description">Un pipeline de données ETL de bout en bout pour extraire, transformer et charger des données sportives depuis Yallakora.</p><div class="project-tech"><span>ETL</span><span>Python</span><span>Pipeline</span></div></div>
+                </div>
+                <div class="project-card" data-category="data" data-aos="fade-up">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-chart-bar"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Data & ML</div><h3 class="project-title">Modèle ML Prédictif Kaggle</h3><p class="project-description">Développement d'un modèle de prédiction ML utilisant des jeux de données à grande échelle de Kaggle avec des techniques avancées.</p><div class="project-tech"><span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>Kaggle</span></div></div>
+                </div>
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-university"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Web</div><h3 class="project-title">Plateforme de Gestion Universitaire</h3><p class="project-description">Une plateforme distribuée de gestion universitaire alimentée par MongoDB pour une gestion efficace des ressources académiques.</p><div class="project-tech"><span>MongoDB</span><span>Systèmes Distribués</span></div></div>
+                </div>
+                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-database"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Data & ML</div><h3 class="project-title">Pipeline Big Data Approvisionnement</h3><p class="project-description">Un pipeline Big Data pour un système d'approvisionnement, traitant des données à grande échelle et des analyses.</p><div class="project-tech"><span>Big Data</span><span>Pipeline</span><span>ETL</span></div></div>
+                </div>
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-heartbeat"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Web</div><h3 class="project-title">Application Statistiques Médicales</h3><p class="project-description">Site web de gestion des maladies et statistiques médicales développé avec Python (Tkinter) et PHP.</p><div class="project-tech"><span>Python</span><span>Tkinter</span><span>PHP</span></div></div>
+                </div>
+                <div class="project-card" data-category="web" data-aos="fade-up">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-shopping-cart"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Web</div><h3 class="project-title">Gestion des Achats (C)</h3><p class="project-description">Un mini projet pour la gestion des achats, construit en C avec une gestion structurée des données.</p><div class="project-tech"><span>C</span><span>Structures de Données</span></div></div>
+                </div>
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-gamepad"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Web</div><h3 class="project-title">Jeu XouDonQi (Java)</h3><p class="project-description">Un mini jeu développé en Java, avec un gameplay interactif et une conception orientée objet.</p><div class="project-tech"><span>Java</span><span>POO</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COMPÉTENCES ==================== -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;compétences&gt;</span>
+                <h2 class="section-title">Compétences <span class="text-gradient">Techniques</span></h2>
+                <p class="section-subtitle">Technologies et outils avec lesquels je travaille</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up">
+                    <div class="skill-category-header"><div class="skill-icon"><i class="fas fa-server"></i></div><h3>Big Data & Bases de Données</h3></div>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><i class="fas fa-bolt"></i><span>Apache Spark</span></div>
+                        <div class="skill-tag"><i class="fas fa-stream"></i><span>Kafka</span></div>
+                        <div class="skill-tag"><i class="fas fa-mountain"></i><span>Hadoop</span></div>
+                        <div class="skill-tag"><i class="fas fa-leaf"></i><span>MongoDB</span></div>
+                        <div class="skill-tag"><i class="fas fa-database"></i><span>Cassandra</span></div>
+                        <div class="skill-tag"><i class="fas fa-database"></i><span>MySQL</span></div>
+                        <div class="skill-tag"><i class="fas fa-code"></i><span>PL/SQL</span></div>
+                        <div class="skill-tag"><i class="fas fa-database"></i><span>Oracle</span></div>
+                        <div class="skill-tag"><i class="fas fa-project-diagram"></i><span>Conception BDD (Merise)</span></div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-category-header"><div class="skill-icon"><i class="fas fa-code"></i></div><h3>Programmation</h3></div>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><i class="fab fa-python"></i><span>Python</span></div>
+                        <div class="skill-tag"><i class="fab fa-java"></i><span>Java</span></div>
+                        <div class="skill-tag"><i class="fas fa-leaf"></i><span>Spring & Spring Boot</span></div>
+                        <div class="skill-tag"><i class="fab fa-php"></i><span>PHP</span></div>
+                        <div class="skill-tag"><i class="fas fa-copyright"></i><span>C</span></div>
+                        <div class="skill-tag"><i class="fas fa-sitemap"></i><span>Algorithmique</span></div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-category-header"><div class="skill-icon"><i class="fas fa-brain"></i></div><h3>IA & Science des Données</h3></div>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><i class="fas fa-cogs"></i><span>ML (Scikit-learn, TF & PyTorch)</span></div>
+                        <div class="skill-tag"><i class="fas fa-network-wired"></i><span>Deep Learning</span></div>
+                        <div class="skill-tag"><i class="fas fa-comments"></i><span>NLP</span></div>
+                        <div class="skill-tag"><i class="fas fa-search"></i><span>RAG</span></div>
+                        <div class="skill-tag"><i class="fas fa-database"></i><span>ChromaDB</span></div>
+                        <div class="skill-tag"><i class="fas fa-robot"></i><span>LLMs & Agents IA</span></div>
+                        <div class="skill-tag"><i class="fas fa-chart-bar"></i><span>Matplotlib, Pandas & NumPy</span></div>
+                        <div class="skill-tag"><i class="fas fa-cloud"></i><span>Cloud Computing</span></div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-category-header"><div class="skill-icon"><i class="fas fa-tools"></i></div><h3>Outils & DevOps</h3></div>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
+                        <div class="skill-tag"><i class="fas fa-project-diagram"></i><span>n8n</span></div>
+                        <div class="skill-tag"><i class="fas fa-wind"></i><span>Airflow</span></div>
+                        <div class="skill-tag"><i class="fas fa-calculator"></i><span>MATLAB</span></div>
+                        <div class="skill-tag"><i class="fab fa-linux"></i><span>Linux</span></div>
+                        <div class="skill-tag"><i class="fab fa-docker"></i><span>Docker</span></div>
+                        <div class="skill-tag"><i class="fas fa-tasks"></i><span>Scrum</span></div>
+                        <div class="skill-tag"><i class="fas fa-drafting-compass"></i><span>UML</span></div>
+                        <div class="skill-tag"><i class="fab fa-figma"></i><span>Figma</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FORMATION ==================== -->
+    <section id="education" class="section education">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;formation&gt;</span>
+                <h2 class="section-title">Formation & <span class="text-gradient">Certifications</span></h2>
+                <p class="section-subtitle">Mon parcours académique et mes certifications professionnelles</p>
+            </div>
+            <div class="education-grid">
+                <div class="education-column" data-aos="fade-right">
+                    <h3 class="column-title"><i class="fas fa-graduation-cap"></i> Formation</h3>
+                    <div class="edu-card"><div class="edu-year">2024 — 2027</div><h4>Cycle Ingénierie des Données</h4><p class="edu-school"><i class="fas fa-university"></i> ENSA El Hoceima</p><p class="edu-description">Cycle d'ingénieur spécialisé en Ingénierie des Données, couvrant le Big Data, le ML, le développement logiciel et les systèmes de bases de données.</p></div>
+                    <div class="edu-card"><div class="edu-year">2022 — 2024</div><h4>Classes Préparatoires Intégrées</h4><p class="edu-school"><i class="fas fa-university"></i> ENSA El Hoceima</p><p class="edu-description">Programme préparatoire intensif de deux ans en mathématiques, physique et fondamentaux de l'informatique.</p></div>
+                    <div class="edu-card"><div class="edu-year">2021 — 2022</div><h4>Génie Informatique</h4><p class="edu-school"><i class="fas fa-university"></i> École Supérieure de Technologie de Casablanca</p><p class="edu-description">Première année d'études en Génie Informatique à l'EST Casablanca.</p></div>
+                    <div class="edu-card"><div class="edu-year">2020 — 2021</div><h4>Baccalauréat Sciences Physiques</h4><p class="edu-school"><i class="fas fa-school"></i> Lycée</p><p class="edu-description">Baccalauréat scientifique avec spécialisation en sciences physiques.</p></div>
+                </div>
+                <div class="education-column" data-aos="fade-left">
+                    <h3 class="column-title"><i class="fas fa-certificate"></i> Certifications</h3>
+                    <div class="cert-card"><div class="cert-icon"><i class="fab fa-java"></i></div><div class="cert-info"><h4>Oracle Certified Professional</h4><p>Java SE 17 Developer</p></div><div class="cert-badge">Oracle</div></div>
+                    <div class="cert-card"><div class="cert-icon"><i class="fas fa-database"></i></div><div class="cert-info"><h4>Oracle Cloud Database Services 2025</h4><p>Professionnel Certifié</p></div><div class="cert-badge">Oracle</div></div>
+                    <div class="cert-card"><div class="cert-icon"><i class="fas fa-cloud"></i></div><div class="cert-info"><h4>Oracle Cloud Infrastructure 2025</h4><p>Associé Certifié Fondements IA</p></div><div class="cert-badge">Oracle</div></div>
+                    <div class="cert-card"><div class="cert-icon"><i class="fas fa-brain"></i></div><div class="cert-info"><h4>Deep Learning avec TensorFlow 2</h4><p>365 Data Science</p></div><div class="cert-badge">365DS</div></div>
+                    <div class="cert-card"><div class="cert-icon"><i class="fas fa-chart-bar"></i></div><div class="cert-info"><h4>Ingénieur Données Associé</h4><p>DataCamp</p></div><div class="cert-badge">DataCamp</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Me <span class="text-gradient">Contacter</span></h2>
+                <p class="section-subtitle">Vous avez un projet en tête ou souhaitez collaborer ? Contactez-moi !</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Travaillons ensemble</h3>
+                    <p>Je suis toujours ouvert à discuter de nouvelles opportunités, stages ou projets intéressants. Que vous ayez besoin d'une solution d'ingénierie des données, que vous souhaitiez collaborer sur un projet ML, ou simplement dire bonjour — n'hésitez pas à me contacter !</p>
+                    <div class="contact-cards">
+                        <div class="contact-card"><div class="contact-card-icon"><i class="fas fa-envelope"></i></div><div class="contact-card-info"><span class="contact-card-label">Email</span><a href="mailto:salma2003said@gmail.com">salma2003said@gmail.com</a></div></div>
+                        <div class="contact-card"><div class="contact-card-icon"><i class="fas fa-phone"></i></div><div class="contact-card-info"><span class="contact-card-label">Téléphone</span><a href="tel:+212622918403">+212 622918403</a></div></div>
+                        <div class="contact-card"><div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-card-info"><span class="contact-card-label">Localisation</span><span>El Jadida, Maroc</span></div></div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://github.com/" target="_blank" rel="noopener" class="contact-social"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="contact-social"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:salma2003said@gmail.com" class="contact-social"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group"><label for="name">Votre Nom</label><input type="text" id="name" name="name" placeholder="Jean Dupont" required></div>
+                        <div class="form-group"><label for="email">Votre Email</label><input type="email" id="email" name="email" placeholder="jean@exemple.com" required></div>
+                        <div class="form-group"><label for="subject">Sujet</label><input type="text" id="subject" name="subject" placeholder="Collaboration de projet" required></div>
+                        <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Parlez-moi de votre projet..." required></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-submit"><span>Envoyer le Message</span><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><a href="#hero" class="footer-logo"><span class="logo-bracket">&lt;</span>SS<span class="logo-bracket">/&gt;</span></a><p>Étudiant en Ingénierie des Données créant des solutions data-driven.</p></div>
+                <div class="footer-links"><a href="#about">À propos</a><a href="#experience">Expérience</a><a href="#projects">Projets</a><a href="#skills">Compétences</a><a href="#contact">Contact</a></div>
+                <div class="footer-socials">
+                    <a href="https://github.com/" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:salma2003said@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Said Salma. Tous droits réservés.</p>
+                <p>Conçu & Développé avec <span class="heart">&hearts;</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-to-top" id="back-to-top" aria-label="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

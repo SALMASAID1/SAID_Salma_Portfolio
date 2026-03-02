@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Said Salma | Data Engineering Student</title>
+    <meta name="description" content="Portfolio of Said Salma - Data Engineering Student specializing in Machine Learning, Big Data, and Predictive Analytics.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- ==================== LOADER ==================== -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Loading<span class="dots">...</span></p>
+        </div>
+    </div>
+
+    <!-- ==================== CURSOR ==================== -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- ==================== STARS CANVAS ==================== -->
+    <canvas id="stars-canvas"></canvas>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>SS<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link" data-text="About">About</a></li>
+                <li><a href="#experience" class="nav-link" data-text="Experience">Experience</a></li>
+                <li><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+                <li><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+                <li><a href="#education" class="nav-link" data-text="Education">Education</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="fr.html" class="lang-switch" title="Version française">
+                    <i class="fas fa-globe"></i> FR
+                </a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="#contact" class="nav-cta">Let's Talk</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-effects">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge" data-aos="fade-down">
+                    <span class="badge-dot"></span>
+                    Available for Internships & Opportunities
+                </div>
+                <h1 class="hero-title" data-aos="fade-up">
+                    <span class="title-line">Hello, I'm</span>
+                    <span class="title-name">Said <span class="text-gradient">SALMA</span></span>
+                </h1>
+                <div class="hero-typewriter" data-aos="fade-up" data-aos-delay="200">
+                    <span class="typewriter-prefix">I'm a </span>
+                    <span class="typewriter-text" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                    Data Engineering student passionate about building scalable data-driven solutions 
+                    through machine learning, predictive analytics, and modern data engineering practices.
+                </p>
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>Get In Touch</span>
+                    </a>
+                    <a href="asset/SAID_Salma_resume_en.pdf" download class="btn btn-download">
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </a>
+                </div>
+                <div class="hero-socials" data-aos="fade-up" data-aos-delay="500">
+                    <a href="https://github.com/" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:salma2003said@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+212622918403" class="social-link" aria-label="Phone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="300">
+                <div class="hero-card">
+                    <div class="card-header">
+                        <div class="card-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="card-title">portfolio.py</span>
+                    </div>
+                    <div class="card-body">
+                        <pre><code><span class="code-keyword">class</span> <span class="code-class">DataEngineer</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(<span class="code-param">self</span>):
+        <span class="code-param">self</span>.name = <span class="code-string">"Said SALMA"</span>
+        <span class="code-param">self</span>.role = <span class="code-string">"Data Engineering Student"</span>
+        <span class="code-param">self</span>.school = <span class="code-string">"ENSA El Hoceima"</span>
+        <span class="code-param">self</span>.skills = [
+            <span class="code-string">"Python"</span>, <span class="code-string">"Spark"</span>,
+            <span class="code-string">"Kafka"</span>, <span class="code-string">"ML"</span>,
+            <span class="code-string">"Deep Learning"</span>
+        ]
+
+    <span class="code-keyword">def</span> <span class="code-func">passion</span>(<span class="code-param">self</span>):
+        <span class="code-keyword">return</span> <span class="code-string">"Building data pipelines<br>         that drive insights"</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;about&gt;</span>
+                <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+                <p class="section-subtitle">Get to know who I am and what drives me</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-content" data-aos="fade-right">
+                    <h3>A passionate Data Engineering student</h3>
+                    <p>
+                        Currently in my second year of the Data Engineering cycle at ENSA El Hoceima, 
+                        I'm driven by a deep passion for data science, machine learning, and software development.
+                        My engineering background has equipped me with solid technical expertise covering the 
+                        entire data value chain — from ingestion to real-time visualization.
+                    </p>
+                    <p>
+                        I specialize in designing scalable data-driven solutions through predictive modeling,
+                        building interactive dashboards, and integrating DevOps practices to ensure deployment 
+                        reliability. I master tools like Python (Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy)
+                        and Big Data technologies such as Apache Spark, Kafka, and Hadoop.
+                    </p>
+                    <p>
+                        I'm an active member of the Data & AI Club and the Moroccan Data Scientists community, 
+                        committed to continuous professional development through certifications and real-world 
+                        engineering projects.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                            <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                            <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                            <span class="stat-number" data-count="3">0</span>
+                            <span class="stat-label">Internships</span>
+                        </div>
+                        <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                            <span class="stat-number" data-count="4">0</span>
+                            <span class="stat-label">Languages</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-details" data-aos="fade-left">
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-user"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Name</span>
+                            <span class="detail-value">Said SALMA</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Location</span>
+                            <span class="detail-value">El Jadida, Morocco</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Email</span>
+                            <span class="detail-value">salma2003said@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-phone"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Phone</span>
+                            <span class="detail-value">+212 622918403</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Education</span>
+                            <span class="detail-value">ENSA El Hoceima</span>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-icon"><i class="fas fa-language"></i></div>
+                        <div class="detail-info">
+                            <span class="detail-label">Languages</span>
+                            <span class="detail-value">Arabic, English, French, Spanish</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;experience&gt;</span>
+                <h2 class="section-title">Professional <span class="text-gradient">Experience</span></h2>
+                <p class="section-subtitle">My professional journey and contributions</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Data Scientist Intern</h3>
+                                <span class="timeline-company">
+                                    <i class="fas fa-building"></i> OCP Group — HR Predictive Analytics
+                                </span>
+                            </div>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar-alt"></i> July 2025
+                            </span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li><i class="fas fa-chevron-right"></i>Developed an employee attrition prediction system using machine learning models (Random Forest, Logistic Regression, K-Means).</li>
+                            <li><i class="fas fa-chevron-right"></i>Performed data preprocessing including cleaning, encoding, and normalization of HR features.</li>
+                            <li><i class="fas fa-chevron-right"></i>Created visualizations and exploratory analyses to identify key attrition factors.</li>
+                            <li><i class="fas fa-chevron-right"></i>Designed an interactive dashboard with Streamlit for real-time prediction and HR decision support.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Streamlit</span><span class="tag">Pandas</span><span class="tag">ML</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Remote Data Scientist Intern</h3>
+                                <span class="timeline-company"><i class="fas fa-building"></i> CodSoft</span>
+                            </div>
+                            <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Oct 2024</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li><i class="fas fa-chevron-right"></i>Worked on predictive modeling projects applying machine learning techniques.</li>
+                            <li><i class="fas fa-chevron-right"></i>Consolidated data science competencies through hands-on project work.</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Data Science</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-marker"><div class="marker-dot"></div></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-title-group">
+                                <h3>Introductory Internship</h3>
+                                <span class="timeline-company"><i class="fas fa-building"></i> Intermir</span>
+                            </div>
+                            <span class="timeline-date"><i class="fas fa-calendar-alt"></i> Aug 2022</span>
+                        </div>
+                        <ul class="timeline-details">
+                            <li><i class="fas fa-chevron-right"></i>Created a dynamic website as part of the introductory internship program.</li>
+                        </ul>
+                        <div class="timeline-tags"><span class="tag">Web Development</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;projects&gt;</span>
+                <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+                <p class="section-subtitle">A selection of projects I've built and contributed to</p>
+            </div>
+            <div class="projects-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI & NLP</button>
+                <button class="filter-btn" data-filter="data">Data & ML</button>
+                <button class="filter-btn" data-filter="web">Web Dev</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="ai" data-aos="fade-up">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-robot"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">AI & NLP</div><h3 class="project-title">IT-Pulse RAG Chatbot</h3><p class="project-description">A pair project leveraging LLMs for streaming and real-time knowledge retrieval using Retrieval-Augmented Generation.</p><div class="project-tech"><span>LLMs</span><span>RAG</span><span>ChromaDB</span><span>Python</span></div></div>
+                </div>
+                <div class="project-card" data-category="ai" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-brain"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">AI & NLP</div><h3 class="project-title">AI Language Learning Agent</h3><p class="project-description">An AI agent on n8n for language learning recommendation: automated workflow to suggest personalized learning resources.</p><div class="project-tech"><span>n8n</span><span>AI Agents</span><span>LLMs</span><span>Automation</span></div></div>
+                </div>
+                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-chart-line"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Data & ML</div><h3 class="project-title">Employee Attrition Prediction</h3><p class="project-description">ML project for predicting employee attrition patterns using classification models and data visualization.</p><div class="project-tech"><span>Python</span><span>Scikit-learn</span><span>ML</span></div></div>
+                </div>
+                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-exchange-alt"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Data & ML</div><h3 class="project-title">ETL Pipeline — Yallakora</h3><p class="project-description">An end-to-end ETL data pipeline for extracting, transforming, and loading sports data from Yallakora.</p><div class="project-tech"><span>ETL</span><span>Python</span><span>Data Pipeline</span></div></div>
+                </div>
+                <div class="project-card" data-category="data" data-aos="fade-up">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-chart-bar"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Data & ML</div><h3 class="project-title">Kaggle Predictive ML Model</h3><p class="project-description">Developed a machine learning prediction model using large-scale datasets from Kaggle with advanced ML techniques.</p><div class="project-tech"><span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>Kaggle</span></div></div>
+                </div>
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-university"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Web Dev</div><h3 class="project-title">University Management Platform</h3><p class="project-description">A distributed university management platform powered by MongoDB for efficient academic resource management.</p><div class="project-tech"><span>MongoDB</span><span>Distributed Systems</span></div></div>
+                </div>
+                <div class="project-card" data-category="data" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-database"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Data & ML</div><h3 class="project-title">Big Data Procurement Pipeline</h3><p class="project-description">A Big Data pipeline for a procurement system, handling large-scale data processing and analytics.</p><div class="project-tech"><span>Big Data</span><span>Pipeline</span><span>ETL</span></div></div>
+                </div>
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-heartbeat"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Web Dev</div><h3 class="project-title">Medical Statistics App</h3><p class="project-description">Disease management and medical statistics website built with Python (Tkinter) and PHP.</p><div class="project-tech"><span>Python</span><span>Tkinter</span><span>PHP</span></div></div>
+                </div>
+                <div class="project-card" data-category="web" data-aos="fade-up">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-shopping-cart"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Web Dev</div><h3 class="project-title">Purchase Management (C)</h3><p class="project-description">A mini project for managing purchases, built in C with structured data handling.</p><div class="project-tech"><span>C</span><span>Data Structures</span></div></div>
+                </div>
+                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image"><div class="project-placeholder"><i class="fas fa-gamepad"></i></div><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link"><i class="fab fa-github"></i></a></div></div></div>
+                    <div class="project-info"><div class="project-category">Web Dev</div><h3 class="project-title">XouDonQi Game (Java)</h3><p class="project-description">A mini game project built with Java, featuring interactive gameplay and OOP design.</p><div class="project-tech"><span>Java</span><span>OOP</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;skills&gt;</span>
+                <h2 class="section-title">Technical <span class="text-gradient">Skills</span></h2>
+                <p class="section-subtitle">Technologies and tools I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up">
+                    <div class="skill-category-header"><div class="skill-icon"><i class="fas fa-server"></i></div><h3>Big Data & Databases</h3></div>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><i class="fas fa-bolt"></i><span>Apache Spark</span></div>
+                        <div class="skill-tag"><i class="fas fa-stream"></i><span>Kafka</span></div>
+                        <div class="skill-tag"><i class="fas fa-mountain"></i><span>Hadoop</span></div>
+                        <div class="skill-tag"><i class="fas fa-leaf"></i><span>MongoDB</span></div>
+                        <div class="skill-tag"><i class="fas fa-database"></i><span>Cassandra</span></div>
+                        <div class="skill-tag"><i class="fas fa-database"></i><span>MySQL</span></div>
+                        <div class="skill-tag"><i class="fas fa-code"></i><span>PL/SQL</span></div>
+                        <div class="skill-tag"><i class="fas fa-database"></i><span>Oracle</span></div>
+                        <div class="skill-tag"><i class="fas fa-project-diagram"></i><span>Database Design (Merise)</span></div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-category-header"><div class="skill-icon"><i class="fas fa-code"></i></div><h3>Programming</h3></div>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><i class="fab fa-python"></i><span>Python</span></div>
+                        <div class="skill-tag"><i class="fab fa-java"></i><span>Java</span></div>
+                        <div class="skill-tag"><i class="fas fa-leaf"></i><span>Spring & Spring Boot</span></div>
+                        <div class="skill-tag"><i class="fab fa-php"></i><span>PHP</span></div>
+                        <div class="skill-tag"><i class="fas fa-copyright"></i><span>C</span></div>
+                        <div class="skill-tag"><i class="fas fa-sitemap"></i><span>DSA</span></div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-category-header"><div class="skill-icon"><i class="fas fa-brain"></i></div><h3>AI & Data Science</h3></div>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><i class="fas fa-cogs"></i><span>ML (Scikit-learn, TF & PyTorch)</span></div>
+                        <div class="skill-tag"><i class="fas fa-network-wired"></i><span>Deep Learning</span></div>
+                        <div class="skill-tag"><i class="fas fa-comments"></i><span>NLP</span></div>
+                        <div class="skill-tag"><i class="fas fa-search"></i><span>RAG</span></div>
+                        <div class="skill-tag"><i class="fas fa-database"></i><span>ChromaDB</span></div>
+                        <div class="skill-tag"><i class="fas fa-robot"></i><span>LLMs & AI Agents</span></div>
+                        <div class="skill-tag"><i class="fas fa-chart-bar"></i><span>Matplotlib, Pandas & NumPy</span></div>
+                        <div class="skill-tag"><i class="fas fa-cloud"></i><span>Cloud Computing</span></div>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-category-header"><div class="skill-icon"><i class="fas fa-tools"></i></div><h3>Tools & DevOps</h3></div>
+                    <div class="skill-tags">
+                        <div class="skill-tag"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
+                        <div class="skill-tag"><i class="fas fa-project-diagram"></i><span>n8n</span></div>
+                        <div class="skill-tag"><i class="fas fa-wind"></i><span>Airflow</span></div>
+                        <div class="skill-tag"><i class="fas fa-calculator"></i><span>MATLAB</span></div>
+                        <div class="skill-tag"><i class="fab fa-linux"></i><span>Linux</span></div>
+                        <div class="skill-tag"><i class="fab fa-docker"></i><span>Docker</span></div>
+                        <div class="skill-tag"><i class="fas fa-tasks"></i><span>Scrum</span></div>
+                        <div class="skill-tag"><i class="fas fa-drafting-compass"></i><span>UML</span></div>
+                        <div class="skill-tag"><i class="fab fa-figma"></i><span>Figma</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EDUCATION ==================== -->
+    <section id="education" class="section education">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;education&gt;</span>
+                <h2 class="section-title">Education & <span class="text-gradient">Certifications</span></h2>
+                <p class="section-subtitle">My academic journey and professional certifications</p>
+            </div>
+            <div class="education-grid">
+                <div class="education-column" data-aos="fade-right">
+                    <h3 class="column-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="edu-card"><div class="edu-year">2024 — 2027</div><h4>Data Engineering Cycle</h4><p class="edu-school"><i class="fas fa-university"></i> ENSA El Hoceima</p><p class="edu-description">Engineering cycle specializing in Data Engineering, covering Big Data, ML, Software Development and Database Systems.</p></div>
+                    <div class="edu-card"><div class="edu-year">2022 — 2024</div><h4>Integrated Preparatory Classes</h4><p class="edu-school"><i class="fas fa-university"></i> ENSA El Hoceima</p><p class="edu-description">Two-year intensive preparatory program in mathematics, physics, and computer science fundamentals.</p></div>
+                    <div class="edu-card"><div class="edu-year">2021 — 2022</div><h4>Computer Engineering</h4><p class="edu-school"><i class="fas fa-university"></i> Higher School of Technology of Casablanca</p><p class="edu-description">First year of Computer Engineering studies at EST Casablanca.</p></div>
+                    <div class="edu-card"><div class="edu-year">2020 — 2021</div><h4>Baccalaureate in Physical Sciences</h4><p class="edu-school"><i class="fas fa-school"></i> High School</p><p class="edu-description">Scientific baccalaureate with a focus on physical sciences.</p></div>
+                </div>
+                <div class="education-column" data-aos="fade-left">
+                    <h3 class="column-title"><i class="fas fa-certificate"></i> Certifications</h3>
+                    <div class="cert-card"><div class="cert-icon"><i class="fab fa-java"></i></div><div class="cert-info"><h4>Oracle Certified Professional</h4><p>Java SE 17 Developer</p></div><div class="cert-badge">Oracle</div></div>
+                    <div class="cert-card"><div class="cert-icon"><i class="fas fa-database"></i></div><div class="cert-info"><h4>Oracle Cloud Database Services 2025</h4><p>Certified Professional</p></div><div class="cert-badge">Oracle</div></div>
+                    <div class="cert-card"><div class="cert-icon"><i class="fas fa-cloud"></i></div><div class="cert-info"><h4>Oracle Cloud Infrastructure 2025</h4><p>Certified AI Foundations Associate</p></div><div class="cert-badge">Oracle</div></div>
+                    <div class="cert-card"><div class="cert-icon"><i class="fas fa-brain"></i></div><div class="cert-info"><h4>Deep Learning with TensorFlow 2</h4><p>365 Data Science</p></div><div class="cert-badge">365DS</div></div>
+                    <div class="cert-card"><div class="cert-icon"><i class="fas fa-chart-bar"></i></div><div class="cert-info"><h4>Associate Data Engineer</h4><p>DataCamp</p></div><div class="cert-badge">DataCamp</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">&lt;contact&gt;</span>
+                <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
+                <p class="section-subtitle">Have a project in mind or want to collaborate? Let's connect!</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Let's work together</h3>
+                    <p>I'm always open to discussing new opportunities, internships, or interesting projects. Whether you need a data engineering solution, want to collaborate on an ML project, or just want to say hello — feel free to reach out!</p>
+                    <div class="contact-cards">
+                        <div class="contact-card"><div class="contact-card-icon"><i class="fas fa-envelope"></i></div><div class="contact-card-info"><span class="contact-card-label">Email</span><a href="mailto:salma2003said@gmail.com">salma2003said@gmail.com</a></div></div>
+                        <div class="contact-card"><div class="contact-card-icon"><i class="fas fa-phone"></i></div><div class="contact-card-info"><span class="contact-card-label">Phone</span><a href="tel:+212622918403">+212 622918403</a></div></div>
+                        <div class="contact-card"><div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-card-info"><span class="contact-card-label">Location</span><span>El Jadida, Morocco</span></div></div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://github.com/" target="_blank" rel="noopener" class="contact-social"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="contact-social"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:salma2003said@gmail.com" class="contact-social"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" placeholder="John Doe" required></div>
+                        <div class="form-group"><label for="email">Your Email</label><input type="email" id="email" name="email" placeholder="john@example.com" required></div>
+                        <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="Project Collaboration" required></div>
+                        <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-submit"><span>Send Message</span><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand"><a href="#hero" class="footer-logo"><span class="logo-bracket">&lt;</span>SS<span class="logo-bracket">/&gt;</span></a><p>Data Engineering Student crafting data-driven solutions.</p></div>
+                <div class="footer-links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+                <div class="footer-socials">
+                    <a href="https://github.com/" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:salma2003said@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Said Salma. All rights reserved.</p>
+                <p>Designed & Built with <span class="heart">&hearts;</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
